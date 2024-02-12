@@ -90,6 +90,9 @@ public class MeshGenerator : MarchTables
     /// <param name="_iteration">the lenght of the matrix, i put it like a paramether because some times i just want to see some cubes and not all the matrix</param>
 
     public void createTriangles(){
+        if(ShowGrid){
+            makePointsVisibles(pointsPerFace*pointsPerFace*pointsPerFace);
+        }
         int numTris = 0;
         int index = 0;
         List<Triangle> AllTriangles = new List<Triangle>();
@@ -274,8 +277,8 @@ public class MeshGenerator : MarchTables
             GameObject[] cornersOfCube = new GameObject[8];
             for (int i = 0; i < 8; i++)
             {
-                if (item.Corners[i].w < surfaceLevel)
-                {
+                //if (item.Corners[i].w < surfaceLevel)
+                //{
                     cornersOfCube[i] = GameObject.CreatePrimitive(PrimitiveType.Cube);
                     cornersOfCube[i].transform.parent = allDots[indexPoints].transform;
                     cornersOfCube[i].transform.localScale = sizeCorner;
@@ -283,7 +286,7 @@ public class MeshGenerator : MarchTables
                     Material newMaterial = new Material(DotMaterial);
                     newMaterial.color = new Color(item.Corners[i].w,item.Corners[i].w,item.Corners[i].w, opacityCorner);
                     cornersOfCube[i].GetComponent<MeshRenderer>().material = newMaterial;  
-                }
+                //}
                    
             }
 

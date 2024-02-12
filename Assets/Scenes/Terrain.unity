@@ -847,7 +847,7 @@ MonoBehaviour:
   cornerIndexBFromEdge: 010000000200000003000000000000000500000006000000070000000400000004000000050000000600000007000000
   redererObj: {fileID: 1489088465}
   pointsPerFace: 50
-  numChuncks: 4
+  numChuncks: 2
   surfaceLevel: 0.5
   ShowGrid: 0
   DotMaterial: {fileID: 2100000, guid: 040d70ba6a3eb92438593d4e1fe66eb5, type: 2}
@@ -884,8 +884,9 @@ MonoBehaviour:
   radio: 40
   position: {x: 60, y: 10, z: 60}
   texture: {fileID: 0}
-  textureScale: 3
+  textureScale: 1.5
   meshMaterial: {fileID: 2100000, guid: 785a214005ea71b4fa54d9afe8cfb7c0, type: 2}
+  randomOffset: 1
 --- !u!1 &1195815282
 GameObject:
   m_ObjectHideFlags: 0

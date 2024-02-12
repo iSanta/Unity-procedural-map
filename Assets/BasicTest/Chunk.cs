@@ -14,10 +14,10 @@ public class Chunk : MonoBehaviour
     /// </summary>
     void OnDrawGizmos(){
         float size = structures.Structs.size;
-        Vector3 pos = new Vector3((pointsPerFace*size/2)-(size/2),(pointsPerFace*size/2)-(size/2),(pointsPerFace*size/2)-(size/2));
+        Vector3 pos = new Vector3((pointsPerFace*size)-(size),(pointsPerFace*size)-(size),(pointsPerFace*size)-(size));
         Vector3 initialPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         pos = pos + initialPos;
-        Gizmos.DrawWireCube(pos, Vector3.one * size * pointsPerFace );
+        Gizmos.DrawWireCube(pos, Vector3.one * size * 2 * pointsPerFace );
         //transform.position = Vector3.zero;
     }
 

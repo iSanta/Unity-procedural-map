@@ -6,8 +6,8 @@ namespace structures
 {
     public class Structs : MonoBehaviour
     {
-        public static float size = 1f;
-        private static float distance = 1f;
+        public static float size = 0.5f;
+        private static float distance = 1f * size;
         
         /// <summary>
         /// this vector array is to store the 8 diferent corner positions in a cube based on a pivot in the center of the cube

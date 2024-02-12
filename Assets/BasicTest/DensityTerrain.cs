@@ -11,6 +11,8 @@ public class DensityTerrain : MonoBehaviour
     [SerializeField] private Texture2D texture;
     [SerializeField] private float textureScale;
     [SerializeField] private Material meshMaterial;
+    [SerializeField] private bool randomOffset;
+
 
     private float offsetx;
     private float offsety;
@@ -34,8 +36,16 @@ public class DensityTerrain : MonoBehaviour
     /// you can visualize the texture in the inspector, just check the "texture" serialized variable
     /// </summary>
     private void noiseGenerator(){
-        offsetx = Random.Range(0f, 10000f);
-        offsety = Random.Range(0f, 10000f);
+        if (randomOffset)
+        {
+            offsetx = Random.Range(0f, 10000f);
+            offsety = Random.Range(0f, 10000f);
+        }
+        else{
+            offsetx = 0;
+            offsety = 0;
+        }
+        
         int numSamples = (cubesPerAxis*numChuncks)+2;
         noiseTexture = new float[numSamples,numSamples];
         Texture2D textureSample = new Texture2D(numSamples,numSamples);
